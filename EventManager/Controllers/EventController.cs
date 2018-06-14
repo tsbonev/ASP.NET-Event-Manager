@@ -16,9 +16,28 @@ namespace EventManager.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            return View();
+            List<Event> list = uow.EventRepository.GetAll();
+
+            EventsViewModel model = new EventsViewModel(list);
+
+            return View(model);
         }
 
+        public ActionResult View(int id)
+        {
+
+            Event e = uow.EventRepository.GetByID(id);
+
+            if(null == e)
+            {
+                TempData["ErrorMessage"] = "No such event found!";
+                return RedirectToAction("Index");
+            }
+
+            EventViewModel model = new EventViewModel(e);
+
+            return View(model);
+        }
 
         [HttpGet]
         public ActionResult Edit(int id = 0)
@@ -31,7 +50,6 @@ namespace EventManager.Controllers
             EventViewModel model = new EventViewModel(e);
 
             return View(model);
-
         }
 
         [HttpPost]
@@ -51,7 +69,6 @@ namespace EventManager.Controllers
             TempData["Message"] = "Event successfully saved!";
 
             return RedirectToAction("Index");
-
         }
 
         [HttpPost]
