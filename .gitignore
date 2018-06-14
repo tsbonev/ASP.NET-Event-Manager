@@ -1,0 +1,4 @@
+*.jfm
+*.dbmdl
+.vs
+packages
