@@ -32,9 +32,15 @@ namespace EventManager.Models
         public int ID { get; set; }
 
         [Required]
+        [MinLength(4, ErrorMessage = "Event name must be at least 4 symbols")]
+        [MaxLength(15, ErrorMessage = "Event name cannot exceed 15 symbols")]
+        [RegularExpression("([a-zA-Z0-9_]*$)", ErrorMessage = "Name should contain only alphanumeric")]
         public string Name { get; set; }
 
         [Required]
+        [MinLength(2, ErrorMessage = "Location name must be at least 2 symbols")]
+        [MaxLength(20, ErrorMessage = "Location name cannot exceed 20 symbols")]
+        [RegularExpression("([A-Za-z]+)", ErrorMessage = "Location name should contain only letters")]
         public string Location { get; set; }
 
         [Required]
