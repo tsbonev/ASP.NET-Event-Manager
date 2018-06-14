@@ -43,6 +43,8 @@ namespace EventManager.Models
         [Required]
         public DateTime EndDate { get; set; }
 
+        public EventViewModel(){}
+
         public EventViewModel(Event e)
         {
             this.ID = e.ID;

@@ -66,12 +66,13 @@ namespace EventManager.Controllers
 
             uow.EventRepository.Save(e);
 
+            uow.Save();
+
             TempData["Message"] = "Event successfully saved!";
 
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
         public ActionResult Delete(int id)
         {
 
@@ -84,6 +85,8 @@ namespace EventManager.Controllers
             }
 
             uow.EventRepository.DeleteByID(id);
+
+            uow.Save();
 
             TempData["Message"] = "Event successfully deleted!";
 
