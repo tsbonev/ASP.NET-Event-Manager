@@ -1,8 +1,8 @@
 # ASP.NET-Event-Manager
 ASP.NET Event Manager project
 
-'''text
-Guide:
+
+Setup Guide:
 
 Before the project can be started, an empty database
 must be created in SQL Server for the tables stored
@@ -27,4 +27,3 @@ as stated previously.
 
 Once the database has been published and the connection strings edited the 
 application can be started by pressing Ctrl+F5.
-'''
