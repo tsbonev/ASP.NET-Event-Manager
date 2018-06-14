@@ -3,3 +3,4 @@ C:\Users\User\source\repos\EventManager\EventManagerDB\bin\Debug\EventManagerDB.
 C:\Users\User\source\repos\EventManager\EventManagerDB\bin\Debug\EventManagerDB.pdb
 C:\Users\User\source\repos\EventManager\EventManagerDB\obj\Debug\EventManagerDB.dll
 C:\Users\User\source\repos\EventManager\EventManagerDB\obj\Debug\EventManagerDB.pdb
+C:\Users\User\source\repos\EventManager\EventManagerDB\obj\Debug\EventManagerDB.sqlprojAssemblyReference.cache

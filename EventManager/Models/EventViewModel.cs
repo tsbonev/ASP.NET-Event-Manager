@@ -47,9 +47,13 @@ namespace EventManager.Models
         [Display(Name = "Start date")]
         public DateTime StartDate { get; set; }
 
+        public string StartDateNormalized { get; set; }
+
         [Required]
         [Display(Name = "End date")]
         public DateTime EndDate { get; set; }
+
+        public string EndDateNormalized { get; set; }
 
         public EventViewModel(){}
 
@@ -59,8 +63,15 @@ namespace EventManager.Models
             this.ID = e.ID;
             this.Name = e.Name;
             this.Location = e.Location;
-            this.StartDate = e.StartDate.ToLocalTime();
-            this.EndDate = e.EndDate.ToLocalTime();
+            this.StartDate = e.StartDate;
+            this.EndDate = e.EndDate;
+
+            
+            EndDateNormalized = String.Format("{0:u}", EndDate);
+            EndDateNormalized = EndDateNormalized.Substring(0, EndDateNormalized.Length - 4);
+            StartDateNormalized = String.Format("{0:u}", StartDate);
+            StartDateNormalized = StartDateNormalized.Substring(0, StartDateNormalized.Length - 4);
+
         }
 
     }

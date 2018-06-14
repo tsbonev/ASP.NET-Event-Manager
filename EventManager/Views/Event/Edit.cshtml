@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>EventViewModel</h4>
         <hr />
@@ -55,6 +55,20 @@
         </div>
     </div>
 }
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#StartDate').val("@Model.StartDateNormalized");
+
+        $('#EndDate').val("@Model.EndDateNormalized");
+
+    });
+
+    </script>
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
