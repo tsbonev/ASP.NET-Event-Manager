@@ -23,7 +23,7 @@
     @foreach (EventViewModel e in Model.eventsList)
     {
         <tr>
-            <td>@e.Name</td>
+            <td>@Html.ActionLink(@e.Name, "View", "Event", new { id = e.ID }, null)</td>
             <td>@e.Location</td>
             <td>@e.StartDate</td>
             <td>@e.EndDate</td>

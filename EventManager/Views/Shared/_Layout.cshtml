@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Event Manager</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href="~Content/bootstrap-datetimepicker.min.css" rel="stylesheet">    
+    <script src="~/Scripts//bootstrap-datetimepicker.min.js"></script>
+
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
@@ -29,10 +33,10 @@
 
     <div class="container body-content">
         <div class="text-info">
-            @TempData["Message"]
+            <h2>@TempData["Message"]</h2>
         </div>
         <div class="text-danger">
-            @TempData["ErrorMessage"]
+            <h2>@TempData["ErrorMessage"]</h2>
         </div>
 
         @RenderBody()

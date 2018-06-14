@@ -44,20 +44,23 @@ namespace EventManager.Models
         public string Location { get; set; }
 
         [Required]
+        [Display(Name = "Start date")]
         public DateTime StartDate { get; set; }
 
         [Required]
+        [Display(Name = "End date")]
         public DateTime EndDate { get; set; }
 
         public EventViewModel(){}
 
         public EventViewModel(Event e)
         {
+
             this.ID = e.ID;
             this.Name = e.Name;
             this.Location = e.Location;
-            this.StartDate = e.StartDate;
-            this.EndDate = e.EndDate;
+            this.StartDate = e.StartDate.ToLocalTime();
+            this.EndDate = e.EndDate.ToLocalTime();
         }
 
     }

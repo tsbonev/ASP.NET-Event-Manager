@@ -58,6 +58,12 @@ namespace EventManager.Controllers
 
             Event e = new Event();
 
+            if(DateTime.Compare(model.StartDate, model.EndDate) >= 0)
+            {
+                TempData["ErrorMessage"] = "Event cannot start later than it ends!";
+                return Edit(model.ID);
+            }
+
             e.ID = model.ID;
             e.Name = model.Name;
             e.Location = model.Location;
